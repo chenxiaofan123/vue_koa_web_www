@@ -1,0 +1,111 @@
+@text: #333;
+@subtext:#eab87d;
+@main: #333333;
+@bordercolor:#d8d8d8;
+@hovercolor:#ffba5f;
+
+
+.borderradius1(@radius:2px) {
+  //兼容4.x 安卓不支持缩写
+  .px2rem(border-top-left-radius,@radius);
+  .px2rem(border-top-right-radius,@radius);
+  .px2rem(border-bottom-right-radius,@radius);
+  .px2rem(border-bottom-left-radius,@radius);
+  .px2rem(border-radius,@radius);
+  background-clip:padding-box;
+}
+
+.commbtn(){
+    padding:16px 32px;
+    border-radius: 4px;   
+}
+
+ .clearfix(){
+   *zoom:1;
+  &:before, &:after{ content:""; display:table; }
+  &:after{ clear: both; }
+ }
+
+ .opacity(@opacity){
+  /* older safari/Chrome browsers */  
+    -webkit-opacity: @opacity;  
+    /* Netscape and Older than Firefox 0.9 */  
+    -moz-opacity: @opacity;  
+    /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
+    -khtml-opacity: @opacity;  
+    /* IE9 + etc...modern browsers */  
+    opacity: @opacity;  
+    /* IE 4-9 */  
+    @opacityPercentage: @opacity * 100; 
+    -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opacityPercentage})"; 
+    filter: ~"alpha(opacity = @{opacityPercentage})";
+}
+
+// 单行文本 不折行 用...
+.nobreak(){ 
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  overflow:hidden;  // 需要设置宽度
+  word-break:keep-all;
+  }
+  //断词处理
+.nobreak(clip){
+  text-overflow: clip; 
+  white-space: normal;
+  overflow:hidden;  // 需要设置宽度
+  word-break:keep-all;
+}
+
+//多行文本 低版本浏览器不支持
+.multiline-nobreak(@line) {
+  display: -webkit-box !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;    /**显示的行数***/
+ }
+
+.fl() { float:left; *display:inline;} //ie6-7双倍margin bug处理
+ .fr() { float:right; *display:inline;}
+ .clearfix{
+  *zoom:1;
+  &:before, &:after{ content:""; display:table; }
+  &:after{ clear: both; }
+ }
+ .clear(@clear:both) { clear:@clear;}
+ //display 简写
+ .db(){display:block;}
+ .dbi() { display:inline-block; *display:inline; *zoom:1;}
+ .di(){ display:inline;}
+ //定位简写
+ .ps() { position:static;}
+ .pr() { position:relative; *zoom:1;}
+ .pa() { position:absolute;}
+ .pf() { position:fixed;}
+ .po() { position:static; margin:0;}// 复位
+ 
+ .mt(@px){
+     margin-top:unit(@px, px);
+ }
+  .ml(@px){
+     margin-left:unit(@px, px);
+ }
+  .mr(@px){
+     margin-right:unit(@px, px);
+ }
+  .mb(@px){
+     margin-bottom:unit(@px, px);
+ }
+ .margin(@top,@right,@bottom,@left){
+     margin:unit(@top, px) unit(@right, px) unit(@bottom, px) unit(@left, px);
+ }
+
+.fontLight{
+  font-weight: normal;
+}
+
+
+.fontSpec{
+  font-family:DIN-Medium-full;
+}

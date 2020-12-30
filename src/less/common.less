@@ -1,0 +1,82 @@
+@import "./config";
+
+/*
+    初始化页面布局
+*/
+
+html, body {
+  font-family:PingFang SC,Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Microsoft Yahei, '微软雅黑', STHeiti, '华文细黑',sans-serif !important;
+    line-height: 1;
+    /*height: 100%;
+    width: 100%;*/
+   font-weight: normal;
+    position: relative;
+  min-height:800px;
+}
+.page{
+    min-height:100%;
+    /*position: relative;*/
+    height: 100%;
+}
+.row{
+        width: 1220px;
+        margin: 0 auto; 
+    }
+
+.content-wrapper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+    box-sizing: border-box;
+    overflow: auto;
+     -webkit-overflow-scrolling: touch;
+}
+
+.bg-gray{
+    background:#f5f5f5;
+}
+.bg-white{
+    background:#fff;
+}
+
+a {
+    text-decoration: none;
+    color: @main;
+}
+a:hover{
+    text-decoration: none;
+    color:#ffba5f;
+}
+
+
+ .clearfix{
+  *zoom:1;
+  &:before, &:after{ content:""; display:table; }
+  &:after{ clear: both; }
+ }
+ 
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+
+/**chrome 默认填充背景色 解决**/
+input:-webkit-autofill {
+-webkit-box-shadow: 0 0 0px 1000px #fafafc inset;
+}
+
+@font-face {
+  font-family: "DIN-Medium-full";
+  src: url("DIN-Medium-full.eot"); /* IE9 */
+  src: url("DIN-Medium-full.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+
+  url("DIN-Medium-full.woff") format("woff"), /* chrome、firefox */
+  url("DIN-Medium-full.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+
+  url("DIN-Medium-full.svg#DIN-Medium-full") format("svg"); /* iOS 4.1- */
+  font-style: normal;
+  font-weight: normal;
+}

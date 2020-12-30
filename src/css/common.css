@@ -1,0 +1,43 @@
+.common-toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 11000;
+    width: auto;
+    padding: 0 8px;
+    line-height: 34px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.common-toast-show {
+    animation: commonToastShow ease-in-out 300ms;
+}
+
+.common-toast-hide {
+    animation: commonToastHide ease-in-out 500ms;
+}
+
+@keyframes commonToastShow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes commonToastHide {
+    0% {
+        opacity: 1;
+
+    }
+    100% {
+        opacity: 0;
+    }
+}
